@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skoop Clock</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="styles.css?v=a1b2c3">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Skoop Clock</h1>
+        </header>
+
+        <main>
+            <section class="clock-display">
+                <div class="analog-clock">
+                    <div class="hand hour" id="hour-hand"></div>
+                    <div class="hand minute" id="minute-hand"></div>
+                    <div class="hand second" id="second-hand"></div>
+                    <div class="center-dot"></div>
+                    <div class="marking marking-1"></div>
+                    <div class="marking marking-2"></div>
+                    <div class="marking marking-3"></div>
+                    <div class="marking marking-4"></div>
+                </div>
+
+                <div class="digital-info">
+                    <div id="digital-time" class="digital-time">00:00:00</div>
+                    <div id="current-date" class="current-date">Loading date...</div>
+                </div>
+            </section>
+
+            <section class="tools">
+                <div class="stopwatch">
+                    <h2>Stopwatch</h2>
+                    <div id="stopwatch-display" class="stopwatch-display">00:00:00.00</div>
+                    <div class="controls">
+                        <button id="start-stop-btn" class="btn primary">Start</button>
+                        <button id="reset-btn" class="btn secondary">Reset</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Skoop Agent</p>
+        </footer>
+    </div>
+    <script src="script.js?v=a1b2c3"></script>
+</body>
+</html>

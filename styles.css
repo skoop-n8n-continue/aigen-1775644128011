@@ -1,0 +1,220 @@
+:root {
+    --primary-color: #00b7af;
+    --bg-dark: #10181f;
+    --text-light: #ffffff;
+    --secondary-gray: #6a7071;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+header h1 {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-size: 2rem;
+    letter-spacing: 1px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.clock-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Analog Clock */
+.analog-clock {
+    width: 250px;
+    height: 250px;
+    border: 6px solid var(--primary-color);
+    border-radius: 50%;
+    position: relative;
+    background: radial-gradient(circle, rgba(16, 24, 31, 1) 0%, rgba(20, 30, 40, 1) 100%);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 183, 175, 0.2);
+}
+
+.hand {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform-origin: bottom;
+    border-radius: 10px;
+    transition: transform 0.05s cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+.hour {
+    width: 6px;
+    height: 60px;
+    background-color: var(--text-light);
+    z-index: 3;
+    margin-left: -3px;
+}
+
+.minute {
+    width: 4px;
+    height: 90px;
+    background-color: var(--text-light);
+    opacity: 0.8;
+    z-index: 2;
+    margin-left: -2px;
+}
+
+.second {
+    width: 2px;
+    height: 100px;
+    background-color: var(--primary-color);
+    z-index: 4;
+    margin-left: -1px;
+}
+
+.center-dot {
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color);
+    border: 2px solid var(--text-light);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.marking {
+    position: absolute;
+    width: 4px;
+    height: 15px;
+    background-color: var(--secondary-gray);
+    left: 50%;
+    margin-left: -2px;
+    transform-origin: 50% 125px;
+}
+
+.marking-1 { transform: rotate(0deg); }
+.marking-2 { transform: rotate(90deg); }
+.marking-3 { transform: rotate(180deg); }
+.marking-4 { transform: rotate(270deg); }
+
+/* Digital Display */
+.digital-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.digital-time {
+    font-size: 4rem;
+    font-weight: 700;
+    font-family: 'Courier New', Courier, monospace;
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(0, 183, 175, 0.3);
+}
+
+.current-date {
+    font-size: 1.2rem;
+    color: var(--secondary-gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Stopwatch */
+.tools {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+}
+
+.stopwatch h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--secondary-gray);
+}
+
+.stopwatch-display {
+    font-size: 3rem;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 8px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.primary {
+    background-color: var(--primary-color);
+    color: var(--bg-dark);
+}
+
+.primary:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.secondary {
+    background-color: transparent;
+    color: var(--text-light);
+    border: 1px solid var(--secondary-gray);
+}
+
+.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.8rem;
+    color: var(--secondary-gray);
+}
+
+@media (max-width: 600px) {
+    .digital-time {
+        font-size: 3rem;
+    }
+    .stopwatch-display {
+        font-size: 2.2rem;
+    }
+}
